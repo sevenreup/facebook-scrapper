@@ -11,8 +11,9 @@ const puppet = require("puppeteer");
     const elms = await page.evaluate(() => {
       const posts = Array.from(document.querySelectorAll('[id^="mall_post"]'));
       return posts.map((post) => {
+        window.console.log(post)
         const arrays = post.innerText.split('\n');
-        return arrays.slice(3, 4);
+        return { name: arrays[0], time: arrays[1], content: arrays.slice(3, (arrays.length - 4))}
       });
     });
 
