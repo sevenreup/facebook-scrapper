@@ -1,4 +1,3 @@
-// import * as puppet from 'puppeteer';
 const puppet = require("puppeteer");
 
 (async () => {
